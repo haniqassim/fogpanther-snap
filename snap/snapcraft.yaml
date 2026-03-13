@@ -1,18 +1,25 @@
 name: fogpanther
 version: '0.3.5'
 title: Fog Panther
-summary: Professional Image Editor
+summary: Professional raster graphics editor for digital artists and photographers
 description: |
-  Fog Panther is a professional raster graphics editor designed for digital
-  artists, photographers, and designers. Features include non-destructive
-  layer-based editing with 24 blend modes, professional tools (brush, clone
-  stamp, healing brush), layer masks, text with full Unicode/RTL support,
-  filters (levels, curves, hue/saturation), PSD import/export, and CMYK
-  color mode support.
+  Fog Panther is a professional image editor with a familiar, industry-standard
+  interface for digital art, photo editing, and graphic design.
+
+  Features include:
+  - Non-destructive layer-based editing with 24 blend modes
+  - 18 professional tools including brush, clone stamp, and healing brush
+  - Layer masks for precise editing control
+  - Text tool with full Unicode and RTL language support
+  - Professional filters: levels, curves, hue/saturation, and more
+  - Support for PSD, PNG, JPEG, TIFF, WebP, AVIF, and OpenRaster formats
+  - CMYK color mode support for print workflows
+  - Unlimited undo/redo with visual history
 license: Proprietary
 icon: snap/gui/icon.png
 contact: https://www.fogpanther.com/contact
 website: https://www.fogpanther.com
+issues: https://github.com/fogpanther/fogpanther/issues
 
 base: core22
 confinement: strict
