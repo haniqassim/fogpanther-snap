@@ -1,0 +1,41 @@
+name: fogpanther
+version: '0.3.5'
+summary: Professional Image Editor
+description: |
+  Fog Panther is a professional raster graphics editor designed for digital
+  artists, photographers, and designers. Features include non-destructive
+  layer-based editing with 24 blend modes, professional tools (brush, clone
+  stamp, healing brush), layer masks, text with full Unicode/RTL support,
+  filters (levels, curves, hue/saturation), PSD import/export, and CMYK
+  color mode support.
+license: LicenseRef-proprietary
+icon: share/icons/hicolor/256x256/apps/com.fogpanther.FogPanther.png
+
+base: core22
+confinement: strict
+grade: stable
+
+architectures:
+  - build-on: amd64
+    build-for: amd64
+
+apps:
+  fogpanther:
+    extensions: [gnome]
+    command: bin/fogpanther
+    desktop: share/applications/com.fogpanther.FogPanther.desktop
+    common-id: com.fogpanther.FogPanther
+    plugs:
+      - home
+      - removable-media
+      - cups
+
+parts:
+  fogpanther:
+    source: https://www.fogpanther.com/releases/fogpanther-0.3.5-r4-x86_64.tar.xz
+    source-checksum: sha256/6120b8ecd4ca68f179dfd94c634758f15b26e0b442753ee22f43f4753b7c5bf7
+    plugin: dump
+    organize:
+      bin/: bin/
+      lib/: lib/
+      share/: share/
