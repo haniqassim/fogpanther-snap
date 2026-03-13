@@ -9,7 +9,7 @@ description: |
   filters (levels, curves, hue/saturation), PSD import/export, and CMYK
   color mode support.
 license: LicenseRef-proprietary
-icon: share/icons/hicolor/256x256/apps/com.fogpanther.FogPanther.png
+icon: snap/gui/icon.png
 
 base: core22
 confinement: strict
@@ -35,7 +35,3 @@ parts:
     source: https://www.fogpanther.com/releases/fogpanther-0.3.5-r4-x86_64.tar.xz
     source-checksum: sha256/6120b8ecd4ca68f179dfd94c634758f15b26e0b442753ee22f43f4753b7c5bf7
     plugin: dump
-    organize:
-      bin/: bin/
-      lib/: lib/
-      share/: share/
