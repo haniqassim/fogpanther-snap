@@ -33,6 +33,8 @@ grade: stable
 architectures:
   - build-on: amd64
     build-for: amd64
+  - build-on: arm64
+    build-for: arm64
 
 apps:
   fogpanther:
@@ -47,6 +49,17 @@ apps:
 
 parts:
   fogpanther:
-    source: https://www.fogpanther.com/releases/fogpanther-0.4.1-r1-snap-x86_64.tar.xz
-    source-checksum: sha256/001a763e5f9f9a21c95fc7315db90fc95ec77acf160d74fcffc15a3761cd4e0e
+    source: .
     plugin: dump
+    override-pull: |
+      # Select architecture-specific tarball
+      case "$CRAFT_ARCH_BUILD_FOR" in
+        amd64)   ARCH="x86_64" ;;
+        arm64)   ARCH="aarch64" ;;
+        *)       echo "Unsupported architecture: $CRAFT_ARCH_BUILD_FOR"; exit 1 ;;
+      esac
+      # Update version and revision here when releasing
+      URL="https://www.fogpanther.com/releases/fogpanther-0.4.1-r1-snap-${ARCH}.tar.xz"
+      curl -fSL "$URL" -o source.tar.xz
+      tar xf source.tar.xz --strip-components=1
+      rm source.tar.xz
