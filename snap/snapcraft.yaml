@@ -51,6 +51,8 @@ parts:
   fogpanther:
     source: .
     plugin: dump
+    build-packages:
+      - curl
     override-pull: |
       # Select architecture-specific tarball
       case "$CRAFT_ARCH_BUILD_FOR" in
