@@ -62,7 +62,7 @@ parts:
         *)       echo "Unsupported architecture: $CRAFT_ARCH_BUILD_FOR"; exit 1 ;;
       esac
       # Update version and revision here when releasing
-      URL="https://www.fogpanther.com/releases/fogpanther-0.7.4-1-snap-${ARCH}.tar.xz"
+      URL="https://www.fogpanther.com/releases/fogpanther-0.7.4-2-snap-${ARCH}.tar.xz"
       curl -fSL "$URL" -o source.tar.xz
       tar xf source.tar.xz --strip-components=1
       rm source.tar.xz
