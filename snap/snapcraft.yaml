@@ -4,22 +4,21 @@
 # Proprietary and confidential. Unauthorized copying is prohibited.
 
 name: fogpanther
-version: '0.7.4'
+version: '0.8.0'
 title: Fog Panther
 summary: Professional raster graphics editor for digital artists and photographers
 description: |
-  Fog Panther is a professional image editor with a familiar, industry-standard
-  interface for digital art, photo editing, and graphic design.
+  Fog Panther is a professional image editor for people who take their craft
+  seriously. Whether you are painting digital art, retouching photographs,
+  designing graphics, or preparing artwork for print, it puts real,
+  professional-grade power in a fast, focused application that stays out of your
+  way.
 
-  Features include:
-  - Non-destructive layer-based editing with 24 blend modes
-  - 18 professional tools including brush, clone stamp, and healing brush
-  - Layer masks for precise editing control
-  - Text tool with full Unicode and RTL language support
-  - Professional filters: levels, curves, hue/saturation, and more
-  - Support for PSD, PNG, JPEG, TIFF, WebP, AVIF, and OpenRaster formats
-  - CMYK color mode support for print workflows
-  - Unlimited undo/redo with visual history
+  Create without limits. Non-destructive layers keep your options open, precise
+  selection and masking give you control over every detail, and a deep toolkit
+  of brushes, filters, and adjustments is always within reach. Built to stay
+  responsive on large, demanding images, Fog Panther helps you do your best work
+  — and do it faster.
 license: Proprietary
 icon: snap/gui/icon.png
 contact: https://www.fogpanther.com/contact
@@ -62,7 +61,7 @@ parts:
         *)       echo "Unsupported architecture: $CRAFT_ARCH_BUILD_FOR"; exit 1 ;;
       esac
       # Update version and revision here when releasing
-      URL="https://www.fogpanther.com/releases/fogpanther-0.7.4-2-snap-${ARCH}.tar.xz"
+      URL="https://www.fogpanther.com/releases/fogpanther-0.8.0-1-snap-${ARCH}.tar.xz"
       curl -fSL "$URL" -o source.tar.xz
       tar xf source.tar.xz --strip-components=1
       rm source.tar.xz
