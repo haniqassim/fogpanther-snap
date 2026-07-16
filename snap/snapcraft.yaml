@@ -25,7 +25,12 @@ contact: https://www.fogpanther.com/contact
 website: https://www.fogpanther.com
 issues: https://github.com/fogpanther/fogpanther/issues
 
-base: core22
+# core24 (Ubuntu 24.04) matches the ubuntu:24.04 image the snap tarball is built
+# in (packaging/build-snap-tarball.sh): glibc 2.39 covers the binary's GLIBC_2.38
+# requirement, and the gnome extension resolves to gnome-46-2404, providing the
+# GTK 4.14 the app needs (meson.build requires gtk4 >= 4.10). core22 supplied
+# glibc 2.35 and, via gnome-42-2204, GTK 4.6 -- both below what the binary needs.
+base: core24
 confinement: strict
 grade: stable
 
