@@ -4,7 +4,7 @@
 # Proprietary and confidential. Unauthorized copying is prohibited.
 
 name: fogpanther
-version: '0.8.1'
+version: '0.8.2'
 title: Fog Panther
 summary: Professional raster graphics editor for digital artists and photographers
 description: |
@@ -21,9 +21,9 @@ description: |
   — and do it faster.
 license: Proprietary
 icon: snap/gui/icon.png
-contact: https://www.fogpanther.com/contact
+contact: https://www.fogpanther.com/support
 website: https://www.fogpanther.com
-issues: https://github.com/fogpanther/fogpanther/issues
+issues: https://www.fogpanther.com/support
 
 # core24 (Ubuntu 24.04) matches the ubuntu:24.04 image the snap tarball is built
 # in (packaging/build-snap-tarball.sh): glibc 2.39 covers the binary's GLIBC_2.38
@@ -50,7 +50,8 @@ apps:
       - home
       - removable-media
       - cups
-      - network    # Required for trial registration against fogpanther.com
+      - network    # Was for the trial server (removed; licenses verify offline). Kept until
+                   # nothing else is confirmed to need it -- dropping a plug is a store change.
 
 parts:
   fogpanther:
@@ -66,7 +67,7 @@ parts:
         *)       echo "Unsupported architecture: $CRAFT_ARCH_BUILD_FOR"; exit 1 ;;
       esac
       # Update version and revision here when releasing
-      URL="https://www.fogpanther.com/releases/fogpanther-0.8.1-1-snap-${ARCH}.tar.xz"
+      URL="https://www.fogpanther.com/releases/fogpanther-0.8.2-1-snap-${ARCH}.tar.xz"
       curl -fSL "$URL" -o source.tar.xz
       tar xf source.tar.xz --strip-components=1
       rm source.tar.xz
