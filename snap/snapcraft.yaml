@@ -19,7 +19,7 @@ description: |
   of brushes, filters, and adjustments is always within reach. Built to stay
   responsive on large, demanding images, Fog Panther helps you do your best work
   — and do it faster.
-license: Proprietary
+license: proprietary
 icon: snap/gui/icon.png
 contact: https://www.fogpanther.com/support
 website: https://www.fogpanther.com
@@ -34,11 +34,13 @@ base: core24
 confinement: strict
 grade: stable
 
-architectures:
-  - build-on: amd64
-    build-for: amd64
-  - build-on: arm64
-    build-for: arm64
+# core24 replaced core22's `architectures` list with `platforms`; an empty
+# entry builds natively for that architecture. 0.8.1's move to core24 kept
+# the old key, and the Store rejected every build ("'architectures' key is
+# not supported for base 'core24'"), so 0.8.1 never reached Snap users.
+platforms:
+  amd64:
+  arm64:
 
 apps:
   fogpanther:
