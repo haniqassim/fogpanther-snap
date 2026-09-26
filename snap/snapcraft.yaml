@@ -19,7 +19,7 @@ description: |
   of brushes, filters, and adjustments is always within reach. Built to stay
   responsive on large, demanding images, Fog Panther helps you do your best work
   — and do it faster.
-license: proprietary
+license: Proprietary
 icon: snap/gui/icon.png
 contact: https://www.fogpanther.com/support
 website: https://www.fogpanther.com
@@ -69,7 +69,7 @@ parts:
         *)       echo "Unsupported architecture: $CRAFT_ARCH_BUILD_FOR"; exit 1 ;;
       esac
       # Update version and revision here when releasing
-      URL="https://www.fogpanther.com/releases/fogpanther-0.8.2-1-snap-${ARCH}.tar.xz"
+      URL="https://www.fogpanther.com/releases/fogpanther-0.8.2-2-snap-${ARCH}.tar.xz"
       curl -fSL "$URL" -o source.tar.xz
       tar xf source.tar.xz --strip-components=1
       rm source.tar.xz
